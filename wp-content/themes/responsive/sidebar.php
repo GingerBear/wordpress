@@ -48,6 +48,9 @@ switch ( $layout ) {
 
 <?php responsive_widgets_before(); // above widgets container hook ?>
 	<div id="widgets" class="<?php echo implode( ' ', responsive_get_sidebar_classes() ); ?>">
+	<style>
+		
+	</style>
 		<?php responsive_widgets(); // above widgets hook ?>
 
 		<?php if( !dynamic_sidebar( 'main-sidebar' ) ) : ?>

@@ -28,3 +28,109 @@ Read More:
 - http://cyberchimps.com/guide-tags/child-theme-2/
 
 */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+ }
+ 
+#featured {
+	padding-bottom: 20px;
+}
+
+.wm-slide .slide-title {
+		position: absolute;
+		bottom: 0;
+		padding: 3px 8px;
+		background-color: #000;
+		color: #fff;
+		font-size: 1.2em;
+}
+.wm-top-news h3 {
+	margin: 20px 0 15px 10px;
+	padding: 0;
+	font-size: 1.8em;
+}
+
+.wm-top-news li {
+	margin-bottom: 5px;
+}
+
+.wm-top-news li a {
+	color: #000;
+}
+
+.wm-slide-home {
+	margin: 20px;
+}
+
+.wm-slide-page {
+	margin-bottom: 30px;
+}
+		
+#widgets .widget-wrapper {
+	height: 280px;
+	padding: 15px;
+}
+#widgets .widget-wrapper h3{
+	margin-left: 10px;
+}
+#widgets .widget-wrapper ul{
+}
+#widgets .widget-wrapper li {
+	margin-bottom: 4px;
+}
+#widgets .widget-wrapper li a{
+	color: #222;
+}
+
+.post-title {
+	font-size: 1.5em;
+	margin: 10px 0;
+}
+.post-title a {
+	color: #000;
+}
+.read-more {
+	display: none;
+}
+.post-meta {
+	margin-bottom: 15px;
+}
+.post-entry p {
+	margin: 0;
+	font-size: 0.9em;
+}
+
+.sub-page-title {
+	margin-top: 0;
+}
+#wrapper #content-blog {
+	margin-top: 25px;
+}

@@ -39,7 +39,7 @@ get_header();
 	else {
 		$paged = 1;
 	}
-	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
+	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged) );
 	$temp_query = $wp_query;
 	$wp_query = null;
 	$wp_query = $blog_query;
@@ -48,7 +48,6 @@ get_header();
 
 		while( $blog_query->have_posts() ) : $blog_query->the_post();
 			?>
-
 			<?php responsive_entry_before(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php responsive_entry_top(); ?>

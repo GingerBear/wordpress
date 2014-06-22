@@ -40,6 +40,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 		<link rel="profile" href="http://gmpg.org/xfn/11"/>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css" media="screen" />
 
 		<?php wp_head(); ?>
 	</head>

@@ -24,7 +24,6 @@ if( !defined( 'ABSPATH' ) ) {
 	<div id="widgets" class="grid col-300 fit gallery-meta">
 		<?php responsive_widgets(); // above widgets hook ?>
 		<div class="widget-wrapper">
-
 			<div class="widget-title"><h3><?php _e( 'Image Information', 'responsive' ); ?></h3></div>
 			<ul>
 				<?php

@@ -52,66 +52,70 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 
 	<div id="featured" class="grid col-940">
 
-		<div id="featured-content" class="grid col-460">
+			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+			<script type="text/javascript" src="<?php echo bloginfo('template_directory'); ?>/core/js/responsiveslides.min.js"></script>
+			<script>
+			  $(function() {
+			    $(".rslides").responsiveSlides();
+			  });
+			</script>
 
-			<h1 class="featured-title">
-				<?php
-				if ( isset( $responsive_options['home_headline'] ) && $db && $empty ) {
-					echo $responsive_options['home_headline'];
+
+		<div id="featured-content" class="grid col-540">
+			<div class="wm-slide wm-slide-home">
+				
+				<?php 
+				// show front page slides (with tag slide and slide-home)
+				$the_query = new WP_Query( 'tag=slide+slide-home&posts_per_page=3'  );
+
+				// The Loop
+				if ( $the_query->have_posts() ) {
+				  echo '<ul class="rslides">';
+					while ( $the_query->have_posts() ) {
+						$the_query->the_post();
+						echo '<li><a class="slide-title" href="'.get_permalink().'">' . get_the_title() . "</a>";
+						echo '<a class="slide-img" href="'.get_permalink().'">
+						       <img src="' . get_post_meta($post->ID, 'slider-img', true) . '" alt="' . get_the_title() . '" />
+						    	</a>';
+						echo '</li>';
+					}
+				  echo '</ul>';
 				} else {
-					_e( 'Hello, World!', 'responsive' );
+					// no posts found
 				}
+				/* Restore original Post Data */
+				wp_reset_postdata();
 				?>
-			</h1>
 
-			<h2 class="featured-subtitle">
-				<?php
-				if ( isset( $responsive_options['home_subheadline'] ) && $db && $empty )
-					echo $responsive_options['home_subheadline'];
-				else {
-					_e( 'Your H2 subheadline here', 'responsive' );
-				}
-				?>
-			</h2>
-
-			<?php
-			if ( isset( $responsive_options['home_content_area'] ) && $db && $empty ) {
-				echo do_shortcode( wpautop( $responsive_options['home_content_area'] ) );
-			} else {
-				?>
-				<p>
-					<?php _e( 'Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image
-					or even YouTube video if you like.', 'responsive' ); ?>
-				</p>
-
-			<?php
-			}
-
-			if ( $responsive_options['cta_button'] == 0 ): ?>
-
-				<div class="call-to-action">
-
-					<a href="<?php echo $responsive_options['cta_url']; ?>" class="blue button">
-						<?php
-						if ( isset( $responsive_options['cta_text'] ) && $db )
-							echo $responsive_options['cta_text'];
-						else
-							_e( 'Call to Action', 'responsive' );
-						?>
-					</a>
-
-				</div><!-- end of .call-to-action -->
-
-			<?php endif; ?>
-
+			</div>
 		</div>
 		<!-- end of .col-460 -->
 
-		<div id="featured-image" class="grid col-460 fit">
+		<div id="featured-content" class="grid col-380 fit">
+			<div class="wm-top-news">
+				<h3>新闻头条</h2>
+				
+				<?php 
+				// show front page slides (with tag slide and slide-home)
+				$the_query = new WP_Query( 'posts_per_page=8' );
 
-			<?php $featured_content = ( !empty( $responsive_options['featured_content'] ) ) ? $responsive_options['featured_content'] : '<img class="aligncenter" src="' . get_template_directory_uri() . '/core/images/featured-image.png" width="440" height="300" alt="" />'; ?>
+				// The Loop
+				if ( $the_query->have_posts() ) {
+				  echo '<ul>';
+					while ( $the_query->have_posts() ) {
+						$the_query->the_post();
+						echo '<li><a class="" href="'.get_permalink().'">' . get_the_title() . "</a>";
+						echo '</li>';
+					}
+				  echo '</ul>';
+				} else {
+					// no posts found
+				}
+				/* Restore original Post Data */
+				wp_reset_postdata();
+				?>
 
-			<?php echo do_shortcode( wpautop( $featured_content ) ); ?>
+			</div>
 
 		</div>
 		<!-- end of #featured-image -->
