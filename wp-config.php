@@ -22,7 +22,7 @@ define('DB_NAME', 'cnwm');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'mysql');
+define('DB_PASSWORD', '!@#123qweasd');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -86,5 +86,8 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+define('WP_POST_REVISIONS', 3);
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
