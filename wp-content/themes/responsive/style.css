@@ -134,3 +134,38 @@ Read More:
 #wrapper #content-blog {
 	margin-top: 25px;
 }
+
+/*
+		redesign 
+*/
+
+/* body background */
+body.home {
+	background-color: #fff; 
+}
+
+/* menu background */
+body ul.menu{
+	background: #02b1f2;
+	color: #fff;
+}
+
+body ul.menu a{
+	text-shadow: none;
+	border: none;
+}
+
+body ul.menu a:hover{
+	background: #20B8F1;
+}
+
+ul.menu .current-menu-item a, .menu .current_page_item a {
+	background-color: #fff;
+	color: #444;
+}
+.front-page ul.menu .current_page_item a {
+	color: #fff;
+}
+.front-page ul.menu .current_page_item a:hover {
+	background: #20B8F1;
+}
